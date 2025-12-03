@@ -3,7 +3,7 @@ import os
 import sys
 
 # Add unitree_sdk2 python binding path
-unitree_sdk2_path = "/home/yongce/Desktop/unitree_sdk2/python_binding/build/lib"
+unitree_sdk2_path = "${HOME}/Desktop/Teleoperate/unitree_sdk2/python_binding/build/lib"
 if os.path.exists(unitree_sdk2_path):
     sys.path.insert(0, unitree_sdk2_path)
 

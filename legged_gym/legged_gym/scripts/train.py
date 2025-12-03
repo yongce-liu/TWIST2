@@ -32,11 +32,11 @@ import os
 from datetime import datetime
 
 import isaacgym
+import torch
+import wandb
 from legged_gym.envs import *
 from legged_gym.gym_utils import get_args, task_registry
 
-import torch
-import wandb
 
 def train(args):
     args.headless = True
@@ -63,9 +63,9 @@ def train(args):
     robot_type = args.task.split("_")[0]
     
     try:
-        wandb.init(entity="far-wandb", project="twist", name=args.exptid, mode=mode, dir="../../logs")
+        wandb.init(entity="yongce-wb", project="twist2", name=args.exptid, mode=mode, dir="../../logs")
     except:
-        wandb.init(project="g1_mimic", name=args.exptid, mode=mode, dir="../../logs")
+        wandb.init(project="twist2", name=args.exptid, mode=mode, dir="../../logs")
     # wandb.save(LEGGED_GYM_ENVS_DIR + "/base/legged_robot_config.py", policy="now")
     # wandb.save(LEGGED_GYM_ENVS_DIR + "/base/legged_robot.py", policy="now")
     # wandb.save(LEGGED_GYM_ENVS_DIR + "/base/humanoid_config.py", policy="now")
