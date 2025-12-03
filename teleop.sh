@@ -1,6 +1,6 @@
 # sudo ufw disable
 
-source ~/miniconda3/bin/activate gmr
+source ~/miniforge3/bin/activate gmr
 
 cd deploy_real
 

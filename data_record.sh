@@ -1,5 +1,5 @@
 
-source ~/miniconda3/bin/activate twist2
+source ~/miniforge3/bin/activate twist2
 # task_name="0819_shelf"
 
 cd deploy_real
