@@ -3,15 +3,17 @@
 FAR-TWIST Teleop Control Center GUI with Multiple Theme Options
 """
 
-import customtkinter as ctk
-import tkinter as tk
-from tkinter import messagebox
+import os
+import queue
+import signal
 import subprocess
 import threading
-import queue
 import time
-import os
-import signal
+import tkinter as tk
+from tkinter import messagebox
+
+import customtkinter as ctk
+
 
 class ThemeManager:
     """Theme management for different visual styles"""
@@ -853,10 +855,11 @@ class TeleopControlCenter:
     
     def _emergency_stop(self):
         """Emergency stop"""
-        if messagebox.askyesno("Emergency Stop", "Kill all running processes?"):
-            for panel in self.all_panels:
-                if panel.is_running:
-                    panel.kill()
+        # if messagebox.askyesno("Emergency Stop", "Kill all running processes?"):
+        for panel in self.all_panels:
+            if panel.is_running:
+                panel.kill()
+        messagebox.showinfo("Emergency Stop", "All processes killed successfully!")
     
     def run(self):
         """Run application"""
