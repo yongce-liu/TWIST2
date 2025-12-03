@@ -12,19 +12,21 @@ The data includes:
 """
 
 import argparse
-import os
 import json
+import os
+import threading
 import time
-import redis
+from datetime import datetime
+from multiprocessing import Array, Lock, shared_memory
+
 import cv2
 import numpy as np
-from multiprocessing import shared_memory, Array, Lock
-import threading
+import redis
 from data_utils.episode_writer import EpisodeWriter
 from data_utils.vision_client import VisionClient
 from rich import print
 from robot_control.speaker import Speaker
-from datetime import datetime
+
 
 def main(args):
 

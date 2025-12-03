@@ -1,17 +1,19 @@
 # Updated for dex3-1 using new unified unitree_interface
-import sys
 import os
+import sys
 
 # Add unitree_sdk2 python binding path
-unitree_sdk2_path = "/home/ANT.AMAZON.COM/yanjieze/lab42/src/unitree_sdk2/build/lib"
+unitree_sdk2_path = "/home/yongce/Desktop/unitree_sdk2/python_binding/build/lib"
 if os.path.exists(unitree_sdk2_path):
     sys.path.insert(0, unitree_sdk2_path)
 
-import unitree_interface as ui
-import numpy as np
-from enum import IntEnum
 import time
+from enum import IntEnum
+
+import numpy as np
+import unitree_interface as ui
 from data_utils.params import DEFAULT_HAND_POSE
+
 parent2_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(parent2_dir)
 
